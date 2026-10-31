@@ -12,6 +12,7 @@ export default function Contact() {
     message: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -37,9 +38,22 @@ export default function Contact() {
       return
     }
 
+    const company = new FormData(e.currentTarget).get('company')
+    setSending(true)
+
     try {
-      // For now, just show success state
-      // Later you can connect to Resend or another email service
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, company }),
+      })
+      const data = (await response.json().catch(() => null)) as { error?: string } | null
+
+      if (!response.ok) {
+        setError(data?.error || 'Failed to send message. Please try again.')
+        return
+      }
+
       setSubmitted(true)
       setFormData({
         firstName: '',
@@ -50,9 +64,11 @@ export default function Contact() {
 
       setTimeout(() => {
         setSubmitted(false)
-      }, 3000)
-    } catch (err) {
+      }, 5000)
+    } catch {
       setError('Failed to send message. Please try again.')
+    } finally {
+      setSending(false)
     }
   }
 
@@ -78,7 +94,7 @@ export default function Contact() {
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form method="post" action="/api/contact" onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <input
                   type="text"
@@ -116,11 +132,21 @@ export default function Contact() {
                 className="w-full px-4 py-3 bg-white border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-purple-500 font-light text-sm resize-none"
               ></textarea>
 
+              <input
+                type="text"
+                name="company"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="hidden"
+              />
+
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-gray-900 text-white font-thin tracking-wider uppercase hover:bg-gray-800 transition-colors"
+                disabled={sending}
+                className="w-full px-6 py-3 bg-gray-900 text-white font-thin tracking-wider uppercase hover:bg-gray-800 transition-colors disabled:opacity-60"
               >
-                Send
+                {sending ? 'Sending' : 'Send'}
               </button>
             </form>
           </div>
