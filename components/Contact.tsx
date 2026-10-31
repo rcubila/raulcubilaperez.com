@@ -57,7 +57,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-gray-100 py-20 lg:py-32">
+    <section id="contact" className="bg-gray-100 pt-10 pb-16 lg:pt-12 lg:pb-24">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <h2 data-section-title className="text-4xl lg:text-5xl font-thin text-center text-gray-900 mb-16 tracking-widest uppercase">
           Contact
