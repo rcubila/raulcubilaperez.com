@@ -1,8 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import { Link2, Globe2, Camera, Code2 } from 'lucide-react'
 import { socialLinks } from '@/data/social'
+import SocialIcon from '@/components/SocialIcon'
 
 export default function Hero() {
   return (
@@ -74,26 +74,18 @@ export default function Hero() {
 
         {/* Blue bar sits on the white section below and across the bottom of the photo */}
         <div className="absolute inset-x-0 bottom-0 z-20 flex h-[72px] items-center justify-center gap-8 bg-[#17245A]">
-            {socialLinks.map((link) => {
-              const iconMap: { [key: string]: React.ReactNode } = {
-                Github: <Code2 size={20} />,
-                Linkedin: <Link2 size={20} />,
-                Facebook: <Globe2 size={20} />,
-                Instagram: <Camera size={20} />,
-              }
-              return (
-                <a
-                  key={link.id}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-purple-400 transition-colors"
-                  aria-label={link.name}
-                >
-                  {iconMap[link.icon]}
-                </a>
-              )
-            })}
+            {socialLinks.map((link) => (
+              <a
+                key={link.id}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white transition-colors hover:text-purple-400"
+                aria-label={link.name}
+              >
+                <SocialIcon name={link.icon} />
+              </a>
+            ))}
           </div>
         </div>
       </div>

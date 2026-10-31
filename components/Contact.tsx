@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { Link2, Globe2, Camera, Code2 } from 'lucide-react'
 import { socialLinks } from '@/data/social'
+import SocialIcon from '@/components/SocialIcon'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -159,26 +159,18 @@ export default function Contact() {
 
               <div className="border-t border-gray-300 pt-8">
                 <div className="flex gap-6">
-                  {socialLinks.map((link) => {
-                    const iconMap: { [key: string]: React.ReactNode } = {
-                      Github: <Code2 size={20} />,
-                      Linkedin: <Link2 size={20} />,
-                      Facebook: <Globe2 size={20} />,
-                      Instagram: <Camera size={20} />,
-                    }
-                    return (
-                      <a
-                        key={link.id}
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-700 hover:text-purple-600 transition-colors"
-                        aria-label={link.name}
-                      >
-                        {iconMap[link.icon]}
-                      </a>
-                    )
-                  })}
+                  {socialLinks.map((link) => (
+                    <a
+                      key={link.id}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-700 transition-colors hover:text-purple-600"
+                      aria-label={link.name}
+                    >
+                      <SocialIcon name={link.icon} />
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
