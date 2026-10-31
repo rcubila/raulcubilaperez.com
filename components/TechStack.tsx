@@ -30,15 +30,13 @@ export default function TechStack() {
                 {skillGroup.category}
               </h3>
 
-              <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+              <div className="mx-auto grid max-w-4xl grid-cols-2 gap-4">
                 {skillGroup.skills.map((skill) => (
                   <div
                     key={skill}
-                    className="bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-4 text-center hover:bg-white/20 transition-colors"
+                    className="flex min-h-14 items-center justify-center border border-white/20 bg-white/10 px-6 py-4 text-center backdrop-blur-sm transition-colors hover:bg-white/20"
                   >
-                    <p className="text-white font-light">
-                      {skill}
-                    </p>
+                    <p className="font-light text-white">{skill}</p>
                   </div>
                 ))}
               </div>

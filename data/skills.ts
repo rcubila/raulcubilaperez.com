@@ -5,11 +5,11 @@ export const skillsData = [
   },
   {
     category: 'Frontend Development',
-    skills: ['React.js', 'Next.js', 'Material UI', 'Tailwind CSS', 'Bootstrap', 'Angular', 'Figma'],
+    skills: ['React.js', 'Material UI', 'Less', 'Bootstrap', 'Figma', 'Angular 2+'],
   },
   {
     category: 'Backend',
-    skills: ['Java', 'Spring Boot', 'REST APIs', 'GraphQL', 'FastAPI', 'MySQL', 'PostgreSQL'],
+    skills: ['Spring Boot', 'GraphQL', 'MySQL', 'C++'],
   },
   {
     category: 'Testing',
@@ -17,6 +17,15 @@ export const skillsData = [
   },
   {
     category: 'DevOps & Cloud',
-    skills: ['Git', 'GitHub', 'Jenkins', 'Docker', 'Maven', 'Vercel', 'Supabase'],
+    skills: [
+      'Git',
+      'SVN',
+      'Bitbucket',
+      'Jenkins',
+      'Maven',
+      'Docker',
+      'Kubernetes',
+      'CloudFoundry (Gaia Cloud)',
+    ],
   },
 ]
