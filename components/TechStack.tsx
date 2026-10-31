@@ -19,7 +19,7 @@ export default function TechStack() {
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
-        <h2 className="text-4xl lg:text-5xl font-thin text-center text-white mb-16 tracking-widest uppercase">
+        <h2 data-section-title className="text-4xl lg:text-5xl font-thin text-center text-white mb-16 tracking-widest uppercase">
           Technical Proficiencies
         </h2>
 

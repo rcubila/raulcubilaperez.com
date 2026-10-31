@@ -18,10 +18,19 @@ export default function Header() {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
     setIsOpen(false)
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+
+    window.setTimeout(() => {
+      const section = document.querySelector(href)
+      if (!(section instanceof HTMLElement)) return
+
+      const target = section.querySelector('[data-section-title]') ?? section.querySelector('h2') ?? section
+      const header = document.querySelector('header')
+      const headerBottom = header?.getBoundingClientRect().bottom ?? 0
+      const gap = target.tagName === 'H2' ? 16 : 0
+      const top = target.getBoundingClientRect().top + window.scrollY - headerBottom - gap
+
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' })
+    }, 0)
   }
 
   return (

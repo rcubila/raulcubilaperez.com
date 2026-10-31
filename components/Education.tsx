@@ -4,7 +4,7 @@ import { educationData } from '@/data/education'
 export default function Education() {
   return (
     <section id="education" className="bg-white py-10">
-      <div className="bg-gray-100 py-8">
+      <div data-section-title className="bg-gray-100 py-8">
         <h2 className="text-center text-lg font-normal tracking-[0.3em] text-[#1b2744] uppercase">
           Education
         </h2>
