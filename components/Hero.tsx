@@ -21,14 +21,15 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-0 items-stretch">
+        <div className="grid md:grid-cols-[300px_1fr] gap-0 items-stretch">
           {/* Left side - Profile Image */}
-          <div className="relative h-96 md:h-auto">
+          <div className="relative aspect-[4/5] md:aspect-auto">
             <Image
-              src="/images/profile.png"
+              src="/images/profile.jpg"
               alt="Raul Cubila Perez"
               fill
-              className="object-cover"
+              className="object-cover object-[center_22%]"
+              priority
             />
           </div>
 
@@ -67,7 +68,7 @@ export default function Hero() {
         </div>
 
         {/* Social Media Bar */}
-        <div className="bg-gray-900 grid md:grid-cols-2 gap-0">
+        <div className="bg-gray-900 grid md:grid-cols-[300px_1fr] gap-0">
           <div></div>
           <div className="px-8 lg:px-12 py-6 flex gap-6 bg-gray-900">
             {socialLinks.map((link) => {
