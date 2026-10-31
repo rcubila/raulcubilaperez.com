@@ -37,7 +37,7 @@ export default function Projects() {
 
               <div className={imageFirst ? '' : 'md:order-1'}>
                 <h3 className="text-2xl font-normal text-[#1b2744]">{project.title}</h3>
-                <p className="mt-4 text-base font-normal leading-relaxed text-[#1b2744]">
+                <p className="mt-4 text-lg font-normal leading-relaxed text-[#1b2744] md:text-xl">
                   {project.description}
                 </p>
                 <a
