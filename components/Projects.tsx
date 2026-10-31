@@ -5,7 +5,7 @@ import { projectsData } from '@/data/projects'
 
 export default function Projects() {
   return (
-    <section id="projects" className="bg-gray-100 py-20 lg:py-32">
+    <section id="projects" className="bg-gray-100 pt-10 pb-20 lg:pt-12 lg:pb-32">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <h2 className="text-4xl lg:text-5xl font-thin text-center text-gray-900 mb-16 tracking-widest uppercase">
           Personal Projects

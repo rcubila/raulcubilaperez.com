@@ -5,7 +5,7 @@ import { skillsData } from '@/data/skills'
 
 export default function TechStack() {
   return (
-    <section id="tech-stack" className="relative w-full overflow-hidden pt-10 pb-20 lg:pt-12 lg:pb-32">
+    <section id="tech-stack" className="relative w-full overflow-hidden py-10 lg:py-12">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <Image
