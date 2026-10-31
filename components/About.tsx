@@ -1,12 +1,12 @@
 export default function About() {
   return (
-    <section className="relative z-0 -mt-[72px] bg-gray-100 pt-32 pb-20 lg:pt-36 lg:pb-32">
-      <div className="max-w-3xl mx-auto px-6 lg:px-8">
-        <h2 className="text-4xl lg:text-5xl font-thin text-center text-gray-900 mb-12">
+    <section className="relative z-0 -mt-[72px] bg-gray-100 pt-[112px] pb-10">
+      <div className="max-w-xl mx-auto px-6">
+        <h2 className="text-4xl font-normal text-center text-[#1b2744] mb-8">
           Hi! I am Raul
         </h2>
 
-        <div className="space-y-6 text-gray-700 font-light leading-relaxed text-center">
+        <div className="space-y-4 text-sm md:text-base font-normal leading-normal text-center text-[#1b2744]">
           <p>
             Software Engineer with experience building scalable web applications and enterprise systems across frontend and backend technologies.
           </p>
