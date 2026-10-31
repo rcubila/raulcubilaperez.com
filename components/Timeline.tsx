@@ -22,7 +22,7 @@ export default function Timeline({ items, variant = 'default' }: TimelineProps) 
           return (
             <div
               key={item.id}
-              className="grid grid-cols-1 gap-y-2 md:grid-cols-[240px_1.75rem_minmax(0,1fr)] md:gap-x-4"
+              className="grid grid-cols-1 gap-y-2 md:grid-cols-[var(--career-label,240px)_1.75rem_minmax(0,1fr)] md:gap-x-4"
             >
               <div className={`text-center ${isLast ? '' : 'md:pb-10'}`}>
                 <p className="text-sm font-bold tracking-[0.22em] text-[#1b2744]">

@@ -161,3 +161,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes flag-spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}

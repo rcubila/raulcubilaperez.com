@@ -3,13 +3,15 @@ import { educationData } from '@/data/education'
 
 export default function Education() {
   return (
-    <section id="education" className="bg-gray-100 py-20 lg:py-32">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <h2 className="text-4xl lg:text-5xl font-thin text-center text-gray-900 mb-16 tracking-widest uppercase">
+    <section id="education" className="bg-white py-10">
+      <div className="bg-gray-100 py-8">
+        <h2 className="text-center text-lg font-normal tracking-[0.3em] text-[#1b2744] uppercase">
           Education
         </h2>
+      </div>
 
-        <Timeline items={educationData} />
+      <div className="mx-auto max-w-4xl px-6 pt-10 [--career-label:280px]">
+        <Timeline items={educationData} variant="career" />
       </div>
     </section>
   )
