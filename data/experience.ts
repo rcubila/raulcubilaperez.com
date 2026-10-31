@@ -1,5 +1,13 @@
 export const experienceData = [
   {
+    id: 6,
+    years: '2024-Present',
+    title: 'Independent Full-Stack Developer',
+    company: 'CubixEdge',
+    description:
+      'Developing CubixEdge, a trading journal and performance analytics platform, with Next.js, React, and TypeScript. I built trade tracking, journaling, performance analytics, and risk management, with PostgreSQL storage through Supabase and Prisma. Market data feeds the journal, and I carried the product from design through deployment on Vercel.',
+  },
+  {
     id: 1,
     years: '2022-2024',
     title: 'Software Engineer Level 3',

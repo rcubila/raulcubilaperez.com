@@ -23,8 +23,9 @@ export default function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-[900px] px-4 sm:px-0">
         <div className="relative pb-[72px] md:pb-0">
         <div className="grid md:grid-cols-2 gap-0 items-stretch">
-          {/* Left side - Profile Image */}
-          <div className="relative aspect-[4/5] md:aspect-auto md:row-span-2">
+          {/* Left side - Profile Image. The spacer gives the photo a real height on phones; Safari otherwise collapses this grid cell and the page opens on the text. */}
+          <div className="relative w-full md:row-span-2">
+            <div className="pt-[125%] md:hidden" aria-hidden="true" />
             <Image
               src="/images/profile.jpg"
               alt="Raul Cubila Perez"
