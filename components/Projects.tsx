@@ -1,60 +1,57 @@
-'use client'
-
 import Image from 'next/image'
 import { projectsData } from '@/data/projects'
 
 export default function Projects() {
   return (
-    <section id="projects" className="bg-gray-100 pt-10 pb-20 lg:pt-12 lg:pb-32">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <h2 className="text-4xl lg:text-5xl font-thin text-center text-gray-900 mb-16 tracking-widest uppercase">
+    <section id="projects" className="bg-white pb-16">
+      <div className="bg-gray-100 py-8">
+        <h2 className="text-center text-lg font-normal tracking-[0.3em] text-[#1b2744] uppercase">
           Personal Projects
         </h2>
+      </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {projectsData.map((project) => (
-            <div key={project.id} className="flex flex-col">
-              {/* Project Image */}
-              <div className="relative h-64 md:h-80 mb-6 bg-gray-200">
+      <div className="mx-auto max-w-6xl space-y-16 px-6 pt-12 lg:px-8">
+        {projectsData.map((project, index) => {
+          const imageFirst = index % 2 === 0
+
+          return (
+            <article
+              key={project.id}
+              className="grid items-center gap-8 md:grid-cols-2 md:gap-14"
+            >
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group relative block aspect-[16/10] overflow-hidden bg-gray-200 ${
+                  imageFirst ? '' : 'md:order-2'
+                }`}
+              >
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover"
+                  className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
                 />
-              </div>
+              </a>
 
-              {/* Project Info */}
-              <div>
-                <a
-                  href={`https://${project.url}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-thin text-purple-600 hover:text-purple-700 tracking-wide mb-2 inline-block"
-                >
-                  {project.url}
-                </a>
-
-                <h3 className="text-xl lg:text-2xl font-thin text-gray-900 mb-4">
-                  {project.title}
-                </h3>
-
-                <p className="text-gray-700 font-light leading-relaxed mb-4">
+              <div className={imageFirst ? '' : 'md:order-1'}>
+                <h3 className="text-2xl font-normal text-[#1b2744]">{project.title}</h3>
+                <p className="mt-4 text-base font-normal leading-relaxed text-[#1b2744]">
                   {project.description}
                 </p>
-
-                <div>
-                  <p className="text-sm font-normal text-gray-600 tracking-wide mb-2">
-                    Tech Stack:
-                  </p>
-                  <p className="text-sm font-light text-gray-700">
-                    {project.tech}
-                  </p>
-                </div>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-block text-sm tracking-wide text-[#17245A] underline-offset-4 hover:underline"
+                >
+                  {project.label}
+                </a>
               </div>
-            </div>
-          ))}
-        </div>
+            </article>
+          )
+        })}
       </div>
     </section>
   )
