@@ -6,9 +6,9 @@ import { socialLinks } from '@/data/social'
 
 export default function Hero() {
   return (
-    <section className="relative w-full pt-20 pb-12 lg:pb-20 bg-gray-900 overflow-hidden">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0">
+    <section className="relative z-10 w-full pt-20">
+      {/* Building stops at the blue bar so the next white section can slide under it */}
+      <div className="absolute inset-x-0 top-0 bottom-16 overflow-hidden bg-gray-900">
         <Image
           src="/images/hero-building.png"
           alt="Hero background"
@@ -21,9 +21,10 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
+        <div className="relative pb-16 md:pb-0">
         <div className="grid md:grid-cols-[300px_1fr] gap-0 items-stretch">
           {/* Left side - Profile Image */}
-          <div className="relative aspect-[4/5] md:aspect-auto">
+          <div className="relative aspect-[4/5] md:aspect-auto md:row-span-2">
             <Image
               src="/images/profile.jpg"
               alt="Raul Cubila Perez"
@@ -34,7 +35,7 @@ export default function Hero() {
           </div>
 
           {/* Right side - Profile Info */}
-          <div className="bg-gray-100 p-8 lg:p-12 flex flex-col justify-center">
+          <div className="bg-gray-100 p-8 lg:p-12 flex flex-col justify-center md:col-start-2">
             <h1 className="text-4xl lg:text-5xl font-thin tracking-tight text-gray-900 mb-2">
               Raul Cubila Perez
             </h1>
@@ -65,12 +66,11 @@ export default function Hero() {
               </div>
             </div>
           </div>
+          <div className="hidden h-16 md:col-start-2 md:block" aria-hidden="true" />
         </div>
 
-        {/* Social Media Bar */}
-        <div className="bg-gray-900 grid md:grid-cols-[300px_1fr] gap-0">
-          <div></div>
-          <div className="px-8 lg:px-12 py-6 flex gap-6 bg-gray-900">
+        {/* Blue bar sits on the white section below and across the bottom of the photo */}
+        <div className="absolute inset-x-0 bottom-0 z-20 flex h-16 items-center justify-center gap-8 bg-[#17245A]">
             {socialLinks.map((link) => {
               const iconMap: { [key: string]: React.ReactNode } = {
                 Github: <Code2 size={20} />,
