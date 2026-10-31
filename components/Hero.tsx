@@ -6,7 +6,7 @@ import { socialLinks } from '@/data/social'
 
 export default function Hero() {
   return (
-    <section className="relative z-10 w-full pt-20">
+    <section className="relative z-10 w-full pt-32">
       {/* Building stops at the blue bar so the next white section can slide under it */}
       <div className="absolute inset-x-0 top-0 bottom-[72px] overflow-hidden bg-gray-900">
         <Image
@@ -35,34 +35,37 @@ export default function Hero() {
           </div>
 
           {/* Right side - Profile Info */}
-          <div className="bg-gray-100 p-6 md:min-h-[440px] md:p-10 flex flex-col justify-center md:col-start-2">
-            <h1 className="text-3xl md:text-4xl font-thin tracking-tight text-gray-900 mb-2">
+          <div className="bg-gray-100 p-6 md:min-h-[440px] md:p-10 flex flex-col justify-center text-[#1b2744] md:col-start-2">
+            <h1 className="text-3xl md:text-4xl font-normal tracking-tight mb-1">
               Raul Cubila Perez
             </h1>
-            <p className="text-lg font-thin text-gray-600 mb-8">
+            <p className="text-base font-bold mb-6">
               Software Engineer
             </p>
-            <p className="text-gray-700 font-light leading-relaxed mb-8">
-              Full-stack engineer specializing in scalable web applications
-              <br />
-              (React, Java/Spring Boot, FastAPI)
+            <p className="text-sm font-normal leading-relaxed mb-8">
+              Full-stack engineer specializing in scalable web applications (React, Java/Spring Boot, FastAPI)
             </p>
 
-            <div className="space-y-3 text-sm font-thin text-gray-800">
+            <div className="space-y-5 text-sm font-normal">
               <div>
-                <span className="font-normal tracking-wide">Phone:</span>
+                <span className="font-bold">Phone:</span>
                 <br />
                 +41 77 509 31 33
               </div>
               <div>
-                <span className="font-normal tracking-wide">Email:</span>
+                <span className="font-bold">Email:</span>
                 <br />
                 rcubila@gmail.com
               </div>
               <div>
-                <span className="font-normal tracking-wide">Location:</span>
+                <span className="font-bold">Address:</span>
                 <br />
-                Zurich, Switzerland
+                Dottikon, Aargau, Switzerland
+              </div>
+              <div>
+                <span className="font-bold">Date of Birth:</span>
+                <br />
+                May 8, 1984
               </div>
             </div>
           </div>

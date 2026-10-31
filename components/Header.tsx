@@ -34,7 +34,7 @@ export default function Header() {
         <nav className="max-w-7xl mx-auto px-6 py-4 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Logo/Name */}
-            <div className="text-lg font-thin tracking-wide text-gray-900">
+            <div className="text-[30px] leading-tight font-thin tracking-wide text-gray-900">
               Raul Cubila Perez
             </div>
 
