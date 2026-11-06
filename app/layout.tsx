@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.raulcubilaperez.com'),
   title: 'Raul Cubila Perez | Software Engineer',
   description: 'Software Engineer specializing in Java, Spring Boot, React, Next.js, TypeScript and modern full-stack application development.',
   generator: 'Next.js',
@@ -13,18 +14,8 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
+      { url: '/icon.png', type: 'image/png', sizes: '192x192' },
+      { url: '/favicon.ico', sizes: '48x48' },
     ],
     apple: '/apple-icon.png',
   },
