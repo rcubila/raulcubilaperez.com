@@ -20,7 +20,7 @@ export const projectsData = [
   {
     id: 3,
     title: 'Afro Cuban Body Work',
-    url: 'https://afrocubanbodywork.wixsite.com/afrocubanbodywork',
+    url: 'https://www.afrocubanbodywork.com/',
     label: 'afrocubanbodywork.com',
     image: '/images/afrocubanbodywork.jpg',
     description:
